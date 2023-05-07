@@ -11,5 +11,7 @@
         public byte[] StoreSalt { get; set; }       
 
         public string AvatarSourceName { get; set; }
+
+
     }
 }

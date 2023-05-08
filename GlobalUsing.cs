@@ -1,6 +1,2 @@
-﻿namespace ChatAppAPI
-{
-    public class GlobalUsing
-    {
-    }
-}
+﻿global using Microsoft.EntityFrameworkCore;
+global using ChatAppAPI.Entities;

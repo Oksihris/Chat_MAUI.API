@@ -13,6 +13,8 @@ builder.Services.AddDbContext<ChatAppContext>(options =>
     options.UseSqlServer(builder.Configuration["ConnectionStrings"]);
 });
 
+builder.Services.AddTransient<IUserFunction, UserFunction>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

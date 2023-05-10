@@ -7,6 +7,6 @@ namespace ChatAppAPI.Entities
 
         public ChatAppContext (DbContextOptions<ChatAppContext> options) : base(options) { }
 
-        public virtual DbSet<TblUser> TblUsers { get; set; } = null;
+        public virtual DbSet<TblUser> TblUsers { get; set; } = null!;
     }
 }

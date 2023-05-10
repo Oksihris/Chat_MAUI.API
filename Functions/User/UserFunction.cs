@@ -23,7 +23,7 @@ namespace ChatAppAPI.Functions.User
            
                 if (entity == null) return null;
 
-                var isPasswordMatched = VertifyPassword(password, entity.StoreSalt, entity.Password);
+                var isPasswordMatched = VertifyPassword(password, entity.StoredSalt, entity.Password);
 
                 if (!isPasswordMatched) return null;
 
@@ -58,13 +58,13 @@ namespace ChatAppAPI.Functions.User
                 iterationCount: 10000,
                 numBytesRequested: 256 / 8));
 
-            return encryptyedPassword.Equals (storedPassword);
+            return encryptyedPassword.Equals(storedPassword);
         }
 
         private string GenerateJwtToken(TblUser user)
         {
             var tokenHendler = new JwtSecurityTokenHandler();
-            var key = Encoding.ASCII.GetBytes("secret-key");
+            var key = Encoding.ASCII.GetBytes("1234567890123456");
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(new[] { new Claim("id", user.Id.ToString()) }),

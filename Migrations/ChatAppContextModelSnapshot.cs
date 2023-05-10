@@ -48,7 +48,7 @@ namespace ChatAppAPI.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<byte[]>("StoreSalt")
+                    b.Property<byte[]>("StoredSalt")
                         .IsRequired()
                         .HasColumnType("varbinary(max)");
 
